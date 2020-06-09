@@ -48,7 +48,7 @@ There are three ways to [install](https://wiki.minetest.net/Installing_Mods) the
 It is possable to install it without closing the game.
 
 1. In the minetest menu, click on the tab titled **Content**.
-1. At the bottom click on "Browse online content" (it may take a while).
+1. At the bottom click on **Browse online content** (it may take a while).
 1. Search for **balloon**.
 1. Find the mod called **Balloonblocks**.
 1. Click the **Install** button on the right.
@@ -60,7 +60,7 @@ You have now installed the balloonblocks mod, don't forget to enable it.
 
 1. Use the website [ContentDB](https://content.minetest.net/packages/?q=balloonblocks).
 1. Find the mod titled Balloonblocks, then click on it.
-1. Find a green button titled **Download** click on it.
+1. Find a green button titled **Download** and click on it.
 1. Now follow the [wiki instructions](https://wiki.minetest.net/Installing_Mods).
 
 You have now installed the balloonblocks mod, don't forget to enable it.

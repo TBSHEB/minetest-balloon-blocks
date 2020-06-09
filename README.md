@@ -1,132 +1,83 @@
 # Balloonblocks
 
-A mod that adds balloon blocks which can be placed on air.
+A [Minetest](https://www.minetest.net/) mod that adds balloon blocks which can be placed in the air.
 
-![Crafting a red balloonblock](images/balloonblocks_ingame_all1.png)
+![Balloonblocks in the game](images/balloonblocks_ingame_all1.png)
 
 ## Description
 
-Have you ever wanted to build a big house in the sky?
-
-But you can't because it would take ages to build up from the ground.
+Have you ever wanted to build a big house in the sky, but you can't because it would take ages to build up from the ground.
 
 Now you can!
 
-The balloonblocks can be placed on air, this means there is no more trouble getting a block up in the sky.
+The balloonblocks can be placed in the air.
+This means it is now easy to place a block up in the sky.
 
-When placing a balloonblock in the air it is always placed three blocks away.
+When placing a balloonblock in the air it is always placed three blocks away from your current position.
+If you can fly, then you don't have to build to place a node. You can just fly up and place a balloonblock!
 
-That means it is an efficient way to build a path in the sky (if you don't have fly).
+## Gallery
 
-You can just jump onto one height above your current height or the same height.
+![Balloonblocks in the game](images/balloonblocks_ingame_all2.png)
 
-But, if you can fly, then you don't have to build up.
+![Balloonblocks in the game](images/balloonblocks_ingame_ground.png)
 
-You can just fly up and place a balloonblock!
+![Balloonblocks in the game](images/balloonblocks_ingame_red.png)
 
-![Crafting a red balloonblock](images/balloonblocks_ingame_all2.png)
+![Balloonblocks in the game](images/balloonblocks_ingame_yellow.png)
 
-Documentation todo list:
+![Balloonblocks in the game](images/balloonblocks_ingame_green.png)
 
-* Add details to the change log section with version details.
-* Contributing needs a reference to contributing guidlines.
-* Add a brief intro to yourself under the Author heading. Make sure you get approval before pushing to github.
-* Licensing needs a quick reference to the MIT license.
-
-![Crafting a red balloonblock](images/balloonblocks_ingame_ground.png)
-
-## Installing
-
-![Crafting a red balloonblock](images/balloonblocks_ingame_red.png)
-
-There are three ways to install the balloonblocks mod:
-
-### Minetest GUI Installation
-
-You can do it without closing the game.
-
-Click on the tab titled "Content".
-* Then at the bottom click on "Browse online content" (it may take a while).
-* After that search for "balloon".
-* Find the one called "Balloonblocks".
-* On the right of it there will be "install".
-* Click on that.
-* It will say "Downloding and installing Balloonblocks".
-
-You have now installed Balloonblocks.
-
-![Crafting a red balloonblock](images/balloonblocks_ingame_yellow.png)
-
-### Zip File Installation
-
-* Use the website [ContentDB](https://content.minetest.net/packages/?q=balloonblocks)
-* Find the one titled Balloonblocks, then click on it.
-* After that find a green button titled "Download" click on it.
-* Then click ok on the box that comes up.
-* Now open files.
-* Next go to downloads and right click on it.
-* Go to the top one and right click on it.
-* Find "Extract to".
-* Click on that and go to "Home".
-* Then right click on an empty space and find "Show hidden files".
-* Click on it, then find ".minetest".
-* Double click on that.
-* Then find "mods".
-* If you don't have one alredy then make one, but it has to be "mods" exactly or it won't work.
-* Then double click on it.
-* Click "Select".
-* Next take the same path as you did before (Home-.minetest-mods).
-* And finaly rename it to minetest-balloon-blocks.
-
-You have now installed Balloonblocks
-
-![Crafting a red balloonblock](images/balloonblocks_ingame_green.png)
-
-### Git Installation
-
-* Use the website [ContentDB](https://content.minetest.net/packages/?q=balloonblocks).
-* Find the one titled Balloonblocks.
-* Then click on it.
-* After that find "Source" it is near the bottom of the screenshot.
-* Click on that.
-* Then find "Clone or download".
-* Click on it.
-* Open a command line.
-* Type in "cd .minetest".
-* Then "cd mods".
-* Then "git clone " but before you press enter right click on the screen.
-* Find "Paste", click on it
-* Now press enter
-* It will say "Cloning into minetest-balloon-blocks"
-
-You have now installed Balloonblocks
-
-![Crafting a red balloonblock](images/balloonblocks_ingame_blue.png)
-
-## Crafting
-
-This is how to craft them and what they look like
-
-### Red 
+![Balloonblocks in the game](images/balloonblocks_ingame_blue.png)
 
 ![Crafting a red balloonblock](images/balloonblocks_crafting_red.png)
 
-### Yellow
+![Crafting a yellow balloonblock](images/balloonblocks_crafting_yellow.png)
 
-![Crafting a red balloonblock](images/balloonblocks_crafting_yellow.png)
+![Crafting a green balloonblock](images/balloonblocks_crafting_green.png)
 
-### Green
+![Crafting a blue balloonblock](images/balloonblocks_crafting_blue.png)
 
-![Crafting a red balloonblock](images/balloonblocks_crafting_green.png)
 
-### Blue
+## Installing
 
-![Crafting a red balloonblock](images/balloonblocks_crafting_blue.png)
+There are three ways to [install](https://wiki.minetest.net/Installing_Mods) the balloonblocks mod:
+
+### Minetest GUI Installation
+
+It is possable to install it without closing the game.
+
+1. In the minetest menu, click on the tab titled **Content**.
+1. At the bottom click on "Browse online content" (it may take a while).
+1. Search for **balloon**.
+1. Find the mod called **Balloonblocks**.
+1. Click the **Install** button on the right.
+1. You will get a message saying **Downloding and installing Balloonblocks, please wait...**.
+
+You have now installed the balloonblocks mod, don't forget to enable it.
+
+### Zip File Installation
+
+1. Use the website [ContentDB](https://content.minetest.net/packages/?q=balloonblocks).
+1. Find the mod titled Balloonblocks, then click on it.
+1. Find a green button titled **Download** click on it.
+1. Now follow the [wiki instructions](https://wiki.minetest.net/Installing_Mods).
+
+You have now installed the balloonblocks mod, don't forget to enable it.
+
+### Git Installation
+
+1. Install [Git](https://git-scm.com/).
+1. Open a command prompt on your computer.
+1. Change directory into [minetest mod directory](https://wiki.minetest.net/Installing_Mods).
+1. Then type `git clone https://github.com/TBSHEB/minetest-balloon-blocks.git` and hit enter.
+
+You have now installed the balloonblocks mod, don't forget to enable it.
 
 ## Change Log
 
-## Contributing
-
-## Author
+* 2020-06-09: v1.0.0 - Initial release
 
 ## License
+
+MIT License

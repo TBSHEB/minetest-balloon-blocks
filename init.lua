@@ -9,15 +9,15 @@ local placeColour = function (colour)
 		-- Place node three blocks from the user in the air
 		local pos = user:getpos()
 		local dir = user:get_look_dir()
-		local i = 3
+		local balloonPlaceDistanceFromPlayer = 3
 		local new_pos = {
-			x = pos.x + (dir.x * i),
-			y = pos.y + 1 + (dir.y * i),
-			z = pos.z + (dir.z * i),
+			x = pos.x + (dir.x * balloonPlaceDistanceFromPlayer),
+			y = pos.y + 1 + (dir.y * balloonPlaceDistanceFromPlayer),
+			z = pos.z + (dir.z * balloonPlaceDistanceFromPlayer),
 		}
 		local name = 'balloonblocks:'..colour
 		minetest.set_node(new_pos, {name=name})
-
+		
 		local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
 		if (not creative_enabled) then
 			local stack = ItemStack(name)
@@ -41,6 +41,10 @@ local balloonState = {
 	placeYellow = placeColour('yellow'),
 	placeGreen = placeColour('green'),
 	placeBlue = placeColour('blue'),
+	placeBlack = placeColour('black'),
+	placeWhite = placeColour('white'),
+	placeOrange = placeColour('orange'),
+	placePurple = placeColour('purple'),
 	sounds = soundsConfig()
 }
 
@@ -117,5 +121,81 @@ minetest.register_craft({
 		{'group:leaves', 'group:leaves', 'group:leaves'},
 		{'group:leaves', 'dye:blue', 'group:leaves'},
 		{'dye:blue', 'group:leaves', 'dye:blue'},
+	}
+})
+
+minetest.register_node("balloonblocks:black", {
+  description = "Black balloon",
+  tiles = {"balloonblocks_black.png"},
+	groups = {snappy=3},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placeBlack,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:black',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:black', 'group:leaves'},
+		{'dye:black', 'group:leaves', 'dye:black'},
+	}
+})
+
+minetest.register_node("balloonblocks:white", {
+  description = "White balloon",
+  tiles = {"balloonblocks_white.png"},
+	groups = {snappy=3},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placeWhite,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:white',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:white', 'group:leaves'},
+		{'dye:white', 'group:leaves', 'dye:white'},
+	}
+})
+
+minetest.register_node("balloonblocks:orange", {
+  description = "Orange balloon",
+  tiles = {"balloonblocks_orange.png"},
+	groups = {snappy=3},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placeOrange,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:orange',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:orange', 'group:leaves'},
+		{'dye:orange', 'group:leaves', 'dye:orange'},
+	}
+})
+
+minetest.register_node("balloonblocks:purple", {
+  description = "Purple balloon",
+  tiles = {"balloonblocks_purple.png"},
+	groups = {snappy=3},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placePurple,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:purple',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:violet', 'group:leaves'},
+		{'dye:violet', 'group:leaves', 'dye:violet'},
 	}
 })

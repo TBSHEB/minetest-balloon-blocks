@@ -44,6 +44,12 @@ If you can fly, then you don't have to build to place a node. You can just fly u
 
 ![Balloonblocks in the game](images/balloonblocks_ingame_purple.png)
 
+![Balloonblocks in the game](images/balloonblocks_ingame_pink.png)
+
+![Balloonblocks in the game](images/balloonblocks_ingame_grey.png)
+
+![Balloonblocks in the game](images/balloonblocks_ingame_brown.png)
+
 ![Crafting a red balloonblock](images/balloonblocks_crafting_red.png)
 
 ![Crafting a yellow balloonblock](images/balloonblocks_crafting_yellow.png)
@@ -59,6 +65,12 @@ If you can fly, then you don't have to build to place a node. You can just fly u
 ![Crafting a orange balloonblock](images/balloonblocks_crafting_orange.png)
 
 ![Crafting a purple balloonblock](images/balloonblocks_crafting_purple.png)
+
+![Crafting a pink balloonblock](images/balloonblocks_crafting_pink.png)
+
+![Crafting a grey balloonblock](images/balloonblocks_crafting_grey.png)
+
+![Crafting a brown balloonblock](images/balloonblocks_crafting_brown.png)
 
 ## Installing
 
@@ -97,8 +109,13 @@ You have now installed the balloonblocks mod, don't forget to enable it.
 
 ## Change Log
 
+* 2020-06-18: v1.2.0
+  * Added grey, pink, and brown balloonblocks
+  * Added bounce attribute
+  * Added more crafting recipes
+  * Fixed block replacement bug
+* 2020-06-11: v1.1.0 - Added black, white, orange, and purple balloonblocks
 * 2020-06-09: v1.0.0 - Initial release
-* 2020-06-11: v1.1.0 - Added black, white, orange, and purple balloons
 
 ## License
 

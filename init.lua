@@ -15,13 +15,19 @@ local placeColour = function (colour)
 			y = pos.y + 1 + (dir.y * balloonPlaceDistanceFromPlayer),
 			z = pos.z + (dir.z * balloonPlaceDistanceFromPlayer),
 		}
-		local name = 'balloonblocks:'..colour
-		minetest.set_node(new_pos, {name=name})
-		
-		local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
-		if (not creative_enabled) then
-			local stack = ItemStack(name)
-			return ItemStack(name .. " " .. itemstack:get_count() - 1)
+		local getPos = minetest.get_node(new_pos)
+		if getPos.name == "air" or
+				getPos.name == "default:water_source" or
+				getPos.name == "default:water_flowing" or
+				getPos.name == "default:river_water_source" or
+				getPos.name == "default:river_water_flowing" then
+			local name = 'balloonblocks:'..colour
+			minetest.set_node(new_pos, {name=name})
+			local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
+			if (not creative_enabled) then
+				local stack = ItemStack(name)
+				return ItemStack(name .. " " .. itemstack:get_count() - 1)
+			end
 		end
 	end
 end
@@ -45,13 +51,16 @@ local balloonState = {
 	placeWhite = placeColour('white'),
 	placeOrange = placeColour('orange'),
 	placePurple = placeColour('purple'),
+	placeGrey = placeColour('grey'),
+	placePink = placeColour('pink'),
+	placeBrown = placeColour('brown'),
 	sounds = soundsConfig()
 }
 
 minetest.register_node("balloonblocks:red", {
   description = "Red balloon",
   tiles = {"balloonblocks_red.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy=70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeRed,
@@ -70,7 +79,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:yellow", {
 	description = "Yellow balloon",
 	tiles = {"balloonblocks_yellow.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy=70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeYellow,
@@ -89,7 +98,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:green", {
   description = "Green balloon",
   tiles = {"balloonblocks_green.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeGreen,
@@ -108,7 +117,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:blue", {
   description = "Blue balloon",
   tiles = {"balloonblocks_blue.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeBlue,
@@ -127,7 +136,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:black", {
   description = "Black balloon",
   tiles = {"balloonblocks_black.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeBlack,
@@ -146,7 +155,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:white", {
   description = "White balloon",
   tiles = {"balloonblocks_white.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeWhite,
@@ -165,7 +174,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:orange", {
   description = "Orange balloon",
   tiles = {"balloonblocks_orange.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placeOrange,
@@ -184,7 +193,7 @@ minetest.register_craft({
 minetest.register_node("balloonblocks:purple", {
   description = "Purple balloon",
   tiles = {"balloonblocks_purple.png"},
-	groups = {snappy=3},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
 	paramtype = "light",
 	sunlight_propagates = true,
 	on_secondary_use = balloonState.placePurple,
@@ -197,5 +206,150 @@ minetest.register_craft({
 		{'group:leaves', 'group:leaves', 'group:leaves'},
 		{'group:leaves', 'dye:violet', 'group:leaves'},
 		{'dye:violet', 'group:leaves', 'dye:violet'},
+	}
+})
+
+minetest.register_node("balloonblocks:grey", {
+  description = "Grey balloon",
+  tiles = {"balloonblocks_grey.png"},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placeGrey,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:grey',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:grey', 'group:leaves'},
+		{'dye:grey', 'group:leaves', 'dye:grey'},
+	}
+})
+
+
+minetest.register_node("balloonblocks:pink", {
+  description = "Pink balloon",
+  tiles = {"balloonblocks_pink.png"},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placePink,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:pink',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:magenta', 'group:leaves'},
+		{'dye:magenta', 'group:leaves', 'dye:magenta'},
+	}
+})
+
+
+minetest.register_node("balloonblocks:brown", {
+  description = "Brown balloon",
+  tiles = {"balloonblocks_brown.png"},
+	groups = {snappy=3,fall_damage_add_percent = -99, bouncy = 70},
+	paramtype = "light",
+	sunlight_propagates = true,
+	on_secondary_use = balloonState.placeBrown,
+	sounds = balloonState.sounds
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:brown',
+	recipe = {
+		{'group:leaves', 'group:leaves', 'group:leaves'},
+		{'group:leaves', 'dye:brown', 'group:leaves'},
+		{'dye:brown', 'group:leaves', 'dye:brown'},
+	}
+})
+-- Extra crafting --
+
+minetest.register_craft({
+	output = 'balloonblocks:green',
+	recipe = {
+		{'balloonblocks:yellow', 'dye:blue'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:green',
+	recipe = {
+		{'dye:yellow', 'balloonblocks:blue'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:orange',
+	recipe = {
+		{'balloonblocks:yellow', 'dye:red'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:orange',
+	recipe = {
+		{'dye:yellow', 'balloonblocks:red'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:purple',
+	recipe = {
+		{'balloonblocks:red', 'dye:blue'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:purple',
+	recipe = {
+		{'dye:red', 'balloonblocks:blue'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:grey',
+	recipe = {
+		{'balloonblocks:white', 'dye:black'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:grey',
+	recipe = {
+		{'dye:white', 'balloonblocks:black'},
+	}
+})
+
+
+minetest.register_craft({
+	output = 'balloonblocks:pink',
+	recipe = {
+		{'balloonblocks:white', 'dye:red'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:pink',
+	recipe = {
+		{'dye:white', 'balloonblocks:red'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:brown',
+	recipe = {
+		{'balloonblocks:green', 'dye:red'},
+	}
+})
+
+minetest.register_craft({
+	output = 'balloonblocks:brown',
+	recipe = {
+		{'dye:green', 'balloonblocks:red'},
 	}
 })

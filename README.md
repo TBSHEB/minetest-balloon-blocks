@@ -22,11 +22,7 @@ If you can fly, then you don't have to build to place a node. You can just fly u
 
 ![Balloonblocks in the game](images/balloonblocks_ingame_all3.png)
 
-![Balloonblocks in the game](images/balloonblocks_ingame_all4.png)
-
-![Balloonblocks in the game](images/balloonblocks_ingame_ground.png)
-
-![Balloonblocks in the game](images/balloonblocks_ingame_ground2.png)
+![Balloonblocks in the game](images/balloonblocks_ingame_all_glowing.png)
 
 ![Balloonblocks in the game](images/balloonblocks_ingame_red.png)
 
@@ -109,6 +105,7 @@ You have now installed the balloonblocks mod, don't forget to enable it.
 
 ## Change Log
 
+* 2020-06-20: v1.3.0 - Added glowing balloonblocks of all colours
 * 2020-06-18: v1.2.0
   * Added grey, pink, and brown balloonblocks
   * Added bounce attribute

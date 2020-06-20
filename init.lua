@@ -54,6 +54,17 @@ local state = {
 	placeGrey = placeColour('grey'),
 	placePink = placeColour('pink'),
 	placeBrown = placeColour('brown'),
+	placeGlowRed = placeColour('glowing_red'),
+	placeGlowYellow = placeColour('glowing_yellow'),
+	placeGlowGreen = placeColour('glowing_green'),
+	placeGlowBlue = placeColour('glowing_blue'),
+	placeGlowBlack = placeColour('glowing_black'),
+	placeGlowWhite = placeColour('glowing_white'),
+	placeGlowOrange = placeColour('glowing_orange'),
+	placeGlowPurple = placeColour('glowing_purple'),
+	placeGlowGrey = placeColour('glowing_grey'),
+	placeGlowPink = placeColour('glowing_pink'),
+	placeGlowBrown = placeColour('glowing_brown'),
 	sounds = soundsConfig(),
 	groups = {snappy=3, fall_damage_add_percent = -99, bouncy=70}
 }
@@ -353,7 +364,7 @@ minetest.register_node("balloonblocks:glowing_red", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeRed,
+	on_secondary_use = state.placeGlowRed,
 	sounds = state.sounds
 })
 
@@ -373,7 +384,7 @@ minetest.register_node("balloonblocks:glowing_yellow", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeYellow,
+	on_secondary_use = state.placeGlowYellow,
 	sounds = state.sounds
 })
 
@@ -393,7 +404,7 @@ minetest.register_node("balloonblocks:glowing_green", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeGreen,
+	on_secondary_use = state.placeGlowGreen,
 	sounds = state.sounds
 })
 
@@ -413,7 +424,7 @@ minetest.register_node("balloonblocks:glowing_blue", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeBlue,
+	on_secondary_use = state.placeGlowBlue,
 	sounds = state.sounds
 })
 
@@ -433,7 +444,7 @@ minetest.register_node("balloonblocks:glowing_black", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeBlack,
+	on_secondary_use = state.placeGlowBlack,
 	sounds = state.sounds
 })
 
@@ -453,7 +464,7 @@ minetest.register_node("balloonblocks:glowing_white", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeWhite,
+	on_secondary_use = state.placeGlowWhite,
 	sounds = state.sounds
 })
 
@@ -473,7 +484,7 @@ minetest.register_node("balloonblocks:glowing_orange", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeOrange,
+	on_secondary_use = state.placeGlowOrange,
 	sounds = state.sounds
 })
 
@@ -493,7 +504,7 @@ minetest.register_node("balloonblocks:glowing_purple", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placePurple,
+	on_secondary_use = state.placeGlowPurple,
 	sounds = state.sounds
 })
 
@@ -513,7 +524,7 @@ minetest.register_node("balloonblocks:glowing_grey", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeGrey,
+	on_secondary_use = state.placeGlowGrey,
 	sounds = state.sounds
 })
 
@@ -534,7 +545,7 @@ minetest.register_node("balloonblocks:glowing_pink", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placePink,
+	on_secondary_use = state.placeGlowPink,
 	sounds = state.sounds
 })
 
@@ -555,7 +566,7 @@ minetest.register_node("balloonblocks:glowing_brown", {
 	light_source = 30,
 	paramtype = "light",
 	sunlight_propagates = true,
-	on_secondary_use = state.placeBrown,
+	on_secondary_use = state.placeGlowBrown,
 	sounds = state.sounds
 })
 
@@ -779,5 +790,3 @@ minetest.register_craft({
 	type = 'shapeless',
 	recipe = { 'balloonblocks:green', 'dye:red', 'default:torch' }
 })
-
--- Helium balloonblocks --

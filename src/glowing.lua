@@ -9,14 +9,7 @@ minetest.register_node("balloonblocks:glowing_red", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_red',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:red', 'group:leaves', 'dye:red'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("red"))
 
 minetest.register_node("balloonblocks:glowing_yellow", {
 	description = "Glowing yellow balloon",
@@ -29,14 +22,7 @@ minetest.register_node("balloonblocks:glowing_yellow", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_yellow',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:yellow', 'group:leaves', 'dye:yellow'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("yellow"))
 
 minetest.register_node("balloonblocks:glowing_green", {
   description = "Glowing green balloon",
@@ -49,14 +35,7 @@ minetest.register_node("balloonblocks:glowing_green", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_green',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:green', 'group:leaves', 'dye:green'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("green"))
 
 minetest.register_node("balloonblocks:glowing_blue", {
   description = "Glowing blue balloon",
@@ -69,14 +48,7 @@ minetest.register_node("balloonblocks:glowing_blue", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_blue',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:blue', 'group:leaves', 'dye:blue'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("blue"))
 
 minetest.register_node("balloonblocks:glowing_black", {
   description = "Glowing black balloon",
@@ -89,14 +61,7 @@ minetest.register_node("balloonblocks:glowing_black", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_black',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:black', 'group:leaves', 'dye:black'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("black"))
 
 minetest.register_node("balloonblocks:glowing_white", {
   description = "Glowing white balloon",
@@ -109,14 +74,7 @@ minetest.register_node("balloonblocks:glowing_white", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_white',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:white', 'group:leaves', 'dye:white'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("white"))
 
 minetest.register_node("balloonblocks:glowing_orange", {
   description = "Glowing orange balloon",
@@ -129,14 +87,7 @@ minetest.register_node("balloonblocks:glowing_orange", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_orange',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:orange', 'group:leaves', 'dye:orange'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("orange"))
 
 minetest.register_node("balloonblocks:glowing_purple", {
   description = "Glowing purple balloon",
@@ -169,15 +120,7 @@ minetest.register_node("balloonblocks:glowing_grey", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_grey',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:grey', 'group:leaves', 'dye:grey'},
-	}
-})
-
+minetest.register_craft(balloonblocks.craftGlowing("grey"))
 
 minetest.register_node("balloonblocks:glowing_pink", {
   description = "Glowing pink balloon",
@@ -199,7 +142,6 @@ minetest.register_craft({
 	}
 })
 
-
 minetest.register_node("balloonblocks:glowing_brown", {
   description = "Glowing brown balloon",
   tiles = {"balloonblocks_brown.png"},
@@ -211,14 +153,7 @@ minetest.register_node("balloonblocks:glowing_brown", {
 	sounds = balloonblocks.sounds
 })
 
-minetest.register_craft({
-	output = 'balloonblocks:glowing_brown',
-	recipe = {
-		{'group:leaves', 'group:leaves', 'group:leaves'},
-		{'group:leaves', 'default:torch', 'group:leaves'},
-		{'dye:brown', 'group:leaves', 'dye:brown'},
-	}
-})
+minetest.register_craft(balloonblocks.craftGlowing("brown"))
 
 -- Extra crafting --
 

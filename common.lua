@@ -42,6 +42,17 @@ balloonblocks.craftRegular = function (colour)
 		}
 	}
 end
+
+balloonblocks.craftGlowing = function (colour)
+	return {
+		output = 'balloonblocks:glowing_'..colour,
+		recipe = {
+			{'group:leaves', 'group:leaves', 'group:leaves'},
+			{'group:leaves', 'default:torch', 'group:leaves'},
+			{'dye:'..colour, 'group:leaves', 'dye:'..colour},
+		}
+	}
+end
 	
 local soundsConfig = function ()
 	return {

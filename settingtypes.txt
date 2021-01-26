@@ -1,0 +1,11 @@
+#	Brightness of glowing balloons. This will be capped at the server's LIGHT_MAX which is 14 by default. Torches have 12 brightness by default
+balloon_brightness (Balloon brightness) int 14
+
+#	This is the primary ingredient that balloons are crafted from
+base_craft_item (Base craft item) string group:leaves
+
+#	The extra item needed to craft glowing balloons
+glow_craft_item (Glow craft item) string default:torch
+
+#	Enable backward compatibility with Balloonblocks v1.x. This will actively replace all Pink and Purple balloons with Magenta and Violet. If any player has some in his/her inventory, they will be replaced as the player places the balloon.
+backward_compat (Backward Compatibility) bool false

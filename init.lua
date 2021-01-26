@@ -3,7 +3,7 @@
 local intGlowLum = tonumber(minetest.settings:get('balloonblocks:balloon_brightness')) or minetest.LIGHT_MAX
 local strBaseCraftItem = tonumber(minetest.settings:get('balloonblocks.base_craft_item')) or 'group:leaves'
 local strGlowCraftItem = minetest.settings:get('balloonblocks:glow_craft_item') or 'default:torch'
-local boolBackwardCompat = minetest.settings:get('balloonblocks:backward_compat') or false -- Turn this on if upgrading from previous version
+local boolBackwardCompat = minetest.settings:get_bool('balloonblocks:backward_compat') or false -- Turn this on if upgrading from previous version
 
 -- Put locale support here
 

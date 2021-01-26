@@ -1,4 +1,4 @@
-# Balloon Blocks
+# Balloon Blocks v2
 
 A [Minetest](https://www.minetest.net/) mod that adds balloon blocks which can be placed in the air.
 

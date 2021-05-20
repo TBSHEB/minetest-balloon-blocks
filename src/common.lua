@@ -2,6 +2,8 @@
 local creative_mod = minetest.get_modpath("creative")
 -- Cache creative mode setting as fallback if creative mod not present --
 local creative_mode_cache = minetest.settings:get_bool("creative_mode")
+-- Detect node placer recording mod --
+local node_placer_exist = minetest.get_modpath("node_placer")
 
 -- Returns a on_secondary_use function that places the balloon block in the air -- 
 local placeColour = function (colour)
@@ -10,11 +12,11 @@ local placeColour = function (colour)
 		local pos = user:getpos()
 		local dir = user:get_look_dir()
 		local balloonPlaceDistanceFromPlayer = 3
-		local new_pos = {
+		local new_pos = vector.round({
 			x = pos.x + (dir.x * balloonPlaceDistanceFromPlayer),
 			y = pos.y + 1 + (dir.y * balloonPlaceDistanceFromPlayer),
 			z = pos.z + (dir.z * balloonPlaceDistanceFromPlayer),
-		}
+		})
 		local getPos = minetest.get_node(new_pos)
 		if getPos.name == "air" or
 				getPos.name == "default:water_source" or
@@ -22,7 +24,16 @@ local placeColour = function (colour)
 				getPos.name == "default:river_water_source" or
 				getPos.name == "default:river_water_flowing" then
 			local name = 'balloonblocks:'..colour
+			if user:is_player() then
+				if minetest.is_protected(new_pos, user:get_player_name()) then
+					minetest.record_protection_violation(new_pos, user:get_player_name())
+					return itemstack
+				end
+			end
 			minetest.set_node(new_pos, {name=name})
+			if node_placer_exist then
+				node_placer.set_placer(new_pos,user:get_player_name())
+			end
 			local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
 			if (not creative_enabled) then
 				local stack = ItemStack(name)

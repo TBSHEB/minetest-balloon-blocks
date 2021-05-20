@@ -4,10 +4,10 @@ local creative_mod = minetest.get_modpath("creative")
 local creative_mode_cache = minetest.settings:get_bool("creative_mode")
 
 -- Returns a on_secondary_use function that places the balloon block in the air -- 
-local placeColour = function (colour)
+local placeColour = function(colour)
 	return function(itemstack, user, pointed_thing)
 		-- Place node three blocks from the user in the air --
-		local pos = user:getpos()
+		local pos = user:get_pos()
 		local dir = user:get_look_dir()
 		local balloonPlaceDistanceFromPlayer = 3
 		local new_pos = {
@@ -16,17 +16,14 @@ local placeColour = function (colour)
 			z = pos.z + (dir.z * balloonPlaceDistanceFromPlayer),
 		}
 		local getPos = minetest.get_node(new_pos)
-		if getPos.name == "air" or
-				getPos.name == "default:water_source" or
-				getPos.name == "default:water_flowing" or
-				getPos.name == "default:river_water_source" or
-				getPos.name == "default:river_water_flowing" then
-			local name = 'balloonblocks:'..colour
+		local PosNodeDef = minetest.registered_nodes[getPos.name]
+		if PosNodeDef and PosNodeDef.buildable_to then
+			local name = "balloonblocks:"..colour
 			minetest.set_node(new_pos, {name=name})
 			local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
 			if (not creative_enabled) then
-				local stack = ItemStack(name)
-				return ItemStack(name .. " " .. itemstack:get_count() - 1)
+				itemstack:take_item(1)
+				return itemstack
 			end
 		end
 	end

@@ -104,7 +104,7 @@ You have now installed the balloonblocks mod, don't forget to enable it.
 You have now installed the balloonblocks mod, don't forget to enable it.
 
 ## Change Log
-
+* 2025-04-17: v1.4.1 - Fix protection violation, microblocks unwanted behavior.
 * 2025-04-17: v1.4.0 - Moreblocks support, texture optimisation, deprecation warning suppression.
 * 2020-06-20: v1.3.1 - Fixed glowing placement
 * 2020-06-20: v1.3.0 - Added glowing balloonblocks of all colours

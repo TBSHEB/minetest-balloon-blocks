@@ -1,5 +1,5 @@
 balloonblocks = {}
-local version = "v1.4.0"
+local version = "v1.4.1"
 local mname = "balloonblocks"
 
 local modpath = minetest.get_modpath("balloonblocks")

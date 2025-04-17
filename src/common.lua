@@ -22,11 +22,13 @@ local placeColour = function (colour)
 				getPos.name == "default:river_water_source" or
 				getPos.name == "default:river_water_flowing" then
 			local name = 'balloonblocks:'..colour
-			minetest.set_node(new_pos, {name=name})
-			local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
-			if (not creative_enabled) then
-				local stack = ItemStack(name)
-				return ItemStack(name .. " " .. itemstack:get_count() - 1)
+			if not minetest.is_protected(new_pos, user:get_player_name()) then
+				minetest.set_node(new_pos, {name=name})
+				local creative_enabled = (creative_mod and creative.is_enabled_for(user.get_player_name(user))) or creative_mode_cache
+				if (not creative_enabled) then
+					local stack = ItemStack(name)
+					return ItemStack(name .. " " .. itemstack:get_count() - 1)
+				end
 			end
 		end
 	end

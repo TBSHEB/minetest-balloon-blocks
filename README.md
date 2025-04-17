@@ -105,6 +105,7 @@ You have now installed the balloonblocks mod, don't forget to enable it.
 
 ## Change Log
 
+* 2025-04-17: v1.4.0 - Moreblocks support, texture optimisation, deprecation warning suppression.
 * 2020-06-20: v1.3.1 - Fixed glowing placement
 * 2020-06-20: v1.3.0 - Added glowing balloonblocks of all colours
 * 2020-06-18: v1.2.0
